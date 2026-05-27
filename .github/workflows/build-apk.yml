@@ -24,27 +24,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Patch expo-modules-core publish plugin
-        run: |
-          sed -i 's/ext.useExpoPublishing = {/ext.useExpoPublishing = { -> return;/' \
-            node_modules/expo-modules-core/android/ExpoModulesCorePlugin.gradle
-          sed -i 's/from components.release/\/\/ from components.release/' \
-            node_modules/expo-modules-core/android/ExpoModulesCorePlugin.gradle
-
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 17
-
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
       - name: Build APK
-        run: cd android && ./gradlew assembleRelease
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-store-apk
-          path: store-app/android/app/build/outputs/apk/release/app-release.apk
+        run: npx eas build --platform android --profile preview --non-interactive --wait
+        env:
+          EXPO_TOKEN: QMJ2hOGxCsDkcCLI-zme-Bcfk15D2cHZbCnAVczd

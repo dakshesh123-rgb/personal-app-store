@@ -11,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#1a1a2e"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.personalappstore.app"
@@ -26,6 +28,14 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-file-system"]
+    "plugins": [
+      "expo-file-system",
+      "expo-asset"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a8d3e0f2-1234-5678-abcd-ef0123456789"
+      }
+    }
   }
 }
