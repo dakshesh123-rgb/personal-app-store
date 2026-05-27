@@ -26,6 +26,8 @@ jobs:
 
       - name: Patch expo-modules-core publish plugin
         run: |
+          sed -i 's/ext.useExpoPublishing = {/ext.useExpoPublishing = { -> return;/' \
+            node_modules/expo-modules-core/android/ExpoModulesCorePlugin.gradle
           sed -i 's/from components.release/\/\/ from components.release/' \
             node_modules/expo-modules-core/android/ExpoModulesCorePlugin.gradle
 
