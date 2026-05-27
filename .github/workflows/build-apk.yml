@@ -31,7 +31,7 @@ jobs:
         run: npm install -g eas-cli
 
       - name: Create EAS project
-        run: eas init --non-interactive 2>/dev/null || true
+        run: eas init --non-interactive --force 2>/dev/null || true
 
       - name: Build APK
         run: eas build --platform android --profile preview --non-interactive --wait
