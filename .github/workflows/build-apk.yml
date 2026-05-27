@@ -12,6 +12,9 @@ jobs:
       run:
         working-directory: ./store-app
 
+    env:
+      EXPO_TOKEN: QMJ2hOGxCsDkcCLI-zme-Bcfk15D2cHZbCnAVczd
+
     steps:
       - uses: actions/checkout@v4
 
@@ -32,5 +35,3 @@ jobs:
 
       - name: Build APK
         run: eas build --platform android --profile preview --non-interactive --wait
-        env:
-          EXPO_TOKEN: QMJ2hOGxCsDkcCLI-zme-Bcfk15D2cHZbCnAVczd
