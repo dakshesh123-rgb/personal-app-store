@@ -1,0 +1,9 @@
+[
+  {
+    "id": "sample-app",
+    "name": "Sample App",
+    "description": "A sample mini-app to test the app store",
+    "version": "1.0.0",
+    "addedAt": "2026-05-27T07:48:09.217Z"
+  }
+]

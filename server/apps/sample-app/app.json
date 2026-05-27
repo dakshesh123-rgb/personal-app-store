@@ -1,0 +1,6 @@
+{
+  "id": "sample-app",
+  "name": "Sample App",
+  "description": "A sample mini-app to test the app store",
+  "version": "1.0.0"
+}
