@@ -30,7 +30,18 @@
     },
     "plugins": [
       "expo-file-system",
-      "expo-asset"
+      "expo-asset",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "useLegacyPackaging": true,
+            "minSdkVersion": 24,
+            "targetSdkVersion": 34,
+            "extraProguardRules": "-keep class com.swmansion.reanimated.** { *; }\n-keep class com.facebook.react.animated.** { *; }\n-keep class com.facebook.react.uimanager.** { *; }\n-keep class com.facebook.react.screens.** { *; }\n-keep class com.facebook.react.views.webview.** { *; }\n-keep class * extends com.facebook.react.bridge.JavaScriptModule { *; }\n-keep class * extends com.facebook.react.bridge.NativeModule { *; }\n-keep class * implements com.facebook.react.bridge.ReactModuleWithSpec { *; }"
+          }
+        }
+      ]
     ]
   }
 }
